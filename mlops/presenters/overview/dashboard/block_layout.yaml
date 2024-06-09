@@ -1,0 +1,21 @@
+blocks:
+  ancient_grace:
+    name: ancient grace
+    type: chart
+    uuid: ancient_grace
+  pristine_cloud:
+    name: pristine cloud
+    type: chart
+    uuid: pristine_cloud
+  training_rmse:
+    configuration:
+      chart_type: time series line chart
+    data_source:
+      type: chart_code
+    name: Training RMSE
+    uuid: training_rmse
+layout:
+- - block_uuid: ancient_grace
+    width: 1
+- - block_uuid: pristine_cloud
+    width: 1
