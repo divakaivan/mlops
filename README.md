@@ -18,4 +18,4 @@
    ./scripts/start.sh
    ```
 
-1. Open [`http://localhost:6789`](http://localhost:6789) in your browser.
+1. Open [`http://localhost:6789`](http://localhost:6789).
