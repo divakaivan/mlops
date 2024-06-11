@@ -49,13 +49,13 @@ blocks:
   language: python
   name: destroy deployment
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: custom
   upstream_blocks:
   - infrastructure_setup
   uuid: destroy_deployment
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: pink
   configuration:
     file_source:
@@ -74,7 +74,7 @@ blocks:
   upstream_blocks:
   - destroy_deployment
   uuid: deploy
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: purple
   configuration:
     file_source:
@@ -86,7 +86,7 @@ blocks:
   language: python
   name: ci/cd
   retry_config: null
-  status: updated
+  status: failed
   timeout: null
   type: custom
   upstream_blocks:
