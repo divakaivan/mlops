@@ -1,21 +1,21 @@
 variable "AWS_ACCESS_KEY_ID" {
-  type    = string
-  default = "AWS_ACCESS_KEY_ID"
+  type        = string
+  default     = "AWS_ACCESS_KEY_ID"
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
-  type    = string
-  default = "AWS_SECRET_ACCESS_KEY"
+  type        = string
+  default     = "AWS_SECRET_ACCESS_KEY"
 }
 
 variable "DATABASE_CONNECTION_URL" {
-  type    = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "app_count" {
-  type    = number
-  default = 1
+  type        = number
+  default     = 1
 }
 
 variable "aws_region" {
@@ -94,16 +94,4 @@ variable "enable_ci_cd" {
   description = "A flag to enable/disable the CI/CD null resource"
   type        = bool
   default     = true
-}
-
-variable "smtp_email" {
-  description = "Dynamically added by the Mage Python script."
-  default     = ""
-  type        = string
-}
-
-variable "smtp_password" {
-  description = "Dynamically added by the Mage Python script."
-  default     = ""
-  type        = string
 }

@@ -1,0 +1,118 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: yellow
+  configuration:
+    file_source:
+      path: unit_2_training/custom/permissions.py
+  downstream_blocks:
+  - infrastructure_setup
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: permissions
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks: []
+  uuid: permissions
+- all_upstream_blocks_executed: true
+  color: blue
+  configuration:
+    file_source:
+      path: unit_2_training/custom/infrastructure_setup.py
+  downstream_blocks:
+  - destroy_deployment
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Infrastructure setup
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - permissions
+  uuid: infrastructure_setup
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration:
+    file_source:
+      path: unit_2_training/custom/destroy_deployment.py
+  downstream_blocks:
+  - deploy
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: destroy deployment
+  retry_config: null
+  status: updated
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - infrastructure_setup
+  uuid: destroy_deployment
+- all_upstream_blocks_executed: false
+  color: pink
+  configuration:
+    file_source:
+      path: unit_2_training/custom/deploy.py
+  downstream_blocks:
+  - ci/cd
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: deploy
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - destroy_deployment
+  uuid: deploy
+- all_upstream_blocks_executed: false
+  color: purple
+  configuration:
+    file_source:
+      path: unit_2_training/custom/ci/cd.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: ci/cd
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - deploy
+  uuid: ci/cd
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-09 13:52:46.394132+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: deploying_to_production
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: deploying_to_production
+variables_dir: /home/src/mage_data/unit_2_training
+widgets: []
